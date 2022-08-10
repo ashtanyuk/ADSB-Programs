@@ -1,3 +1,5 @@
+// Copyright 2022 A.SHT
+
 #include <stdio.h>
 #include <time.h>
 

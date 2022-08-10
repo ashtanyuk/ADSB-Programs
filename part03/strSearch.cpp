@@ -1,4 +1,6 @@
-int strstr(char* s, char* p) {
+// Copyright 2022 A.SHT
+
+int strSearch(const char* s, const char* p) {
    char *pbeg=p;
    while(*s) {
       if(*s==*p) {
