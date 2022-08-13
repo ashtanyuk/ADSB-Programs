@@ -1,4 +1,4 @@
-name: GHA-frac-Release
+name: release
 
 on: [push, pull_request]
 
