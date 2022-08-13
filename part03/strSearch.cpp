@@ -1,4 +1,4 @@
-// Copyright 2022 A.SHT
+// Copyright 2022
 
 int strSearch(const char* s, const char* p) {
    const char *pbeg = p;

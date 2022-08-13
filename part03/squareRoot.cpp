@@ -1,6 +1,6 @@
-// Copyright 2022 A.SHT
+// Copyright 2022
 
-#include <math.h>
+#include <cmath>
 
 static double delta = 0.00000001;
 

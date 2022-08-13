@@ -1,26 +1,16 @@
-// Copyright 2022 A.SHT
+// Copyright 2022
 
-#include <stdio.h>
-#include <time.h>
+#include <ctime>
+using namespace std;
 
-int main()
-{
-  clock_t begin,end;
-  double t1,t2;
+double measure() {
   
-  for(int n=1000000;n<=10000000;n+=1000000) {
-    begin=clock();
-    for(int i=0;i<n;i++)
-       int res=factorial1(i%10);
-    end=clock();
-    t1=(double)(end-begin)/CLOCKS_PER_SEC;
-    begin=clock();
-    for(int i=0;i<n;i++)
-       int res=factorial2(i%10);
-    end=clock();
-    t2=(double)(end-begin)/CLOCKS_PER_SEC;
+  clock_t begin = clock();
 
-    printf("%d,%lf,%lf\n",n,t1,t2);
-  }
-  return 0;
+  code_to_time();
+
+  clock_t end = clock();
+  double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+  
+  return elapsed_secs;
 }

@@ -1,4 +1,4 @@
-// Copyright 2022 A.SHT
+// Copyright 2022
 
 #ifndef PART03_H_
 #define PART03_H_
