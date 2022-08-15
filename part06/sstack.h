@@ -1,13 +1,13 @@
 // Copyright 2022
 
-template<typename type, int size = 100>
+template<typename T, int size = 100>
 class TStack {
    private:
-     type arr[size];
+     T arr[size];
      int top;
    public:
      TStack():top(-1) { }
-     type get() const { 
+     T get() const { 
         return arr[top];
      }
      bool isEmpty() const {
@@ -20,7 +20,7 @@ class TStack {
         if(top>=0)
           top--;
      }
-     void push(type item) {
+     void push(T item) {
        if(top<size-1)
          arr[++top]=item;
      }
