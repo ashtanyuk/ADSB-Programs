@@ -1,6 +1,6 @@
 // Copyright 2022
 
-template<Tname T>
+template<typename T>
 class DStack {
    private:
      T *arr;
