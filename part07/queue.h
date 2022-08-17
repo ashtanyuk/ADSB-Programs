@@ -43,7 +43,7 @@ TQueue<T>::~TQueue()
 template<typename T>
 void TQueue<T>::push(const T & item)
 {
-    // проверяем, ести ли свободное место в очереди
+    // проверяем, есть ли свободное место в очереди
     assert( count < size );
  
     arr[end++] = item;
