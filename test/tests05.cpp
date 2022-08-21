@@ -22,7 +22,7 @@ TEST(part05, quick1) {
 
    quickSort(arr, 0, 9);
   
-   for (int i = 0; i < 10; ++i) {
+   for (int i = 0; i < 10; ++i) 
       EXPECT_EQ(arr[i], arrS[i]) << "Arrays differ at index " << i;
 }
    
