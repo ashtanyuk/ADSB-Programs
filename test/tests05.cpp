@@ -18,13 +18,11 @@ TEST(part05, insertion1) {
 
 TEST(part05, quick1) {
    int arr[]  = {5, 8, 1, 4, 9, 0, 6, 12, 2, 4};
-			int arrS[] = {0, 1, 2, 4, 4, 5, 6, 8, 9, 12};
-			
-			quickSort(arr, 0, 9);
-			
-   ASSERT_EQ(arr.size(), arrS.size()) << "Arrays are of unequal length";
+   int arrS[] = {0, 1, 2, 4, 4, 5, 6, 8, 9, 12};
 
-   for (int i = 0; i < arr.size(); ++i) {
+   quickSort(arr, 0, 9);
+  
+   for (int i = 0; i < 10; ++i) {
       EXPECT_EQ(arr[i], arrS[i]) << "Arrays differ at index " << i;
 }
    

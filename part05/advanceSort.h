@@ -1,11 +1,14 @@
 // Copyright 2022
 
+#ifndef _SWAP_
+#define _SWAP_
 template<typename T>
 void swap(T *a,T *b) {
     T t = *a;
     *a = *b;
     *b = t;
 }
+#endif // _SWAP_
 
 template<typename T>
 void quickSort(T arr[], int p, int r) {
@@ -40,7 +43,7 @@ void shellSort1(T arr[], int size)  {
          while (j >= 0 && arr[j] > arr[j + d]) {
            temp = arr[j];
            arr[j] = arr[j + d];
-           arr[j + d] = count;
+           arr[j + d] = temp;
            j--;
          }
       }

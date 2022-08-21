@@ -1,9 +1,13 @@
+
+#ifndef _SWAP_
+#define _SWAP_
 template<typename T>
 void swap(T *a,T *b) {
     T t = *a;
     *a = *b;
     *b = t;
 }
+#endif // _SWAP_
 
 template<typename T>
 void unratioSort(T arr[], int N) {
