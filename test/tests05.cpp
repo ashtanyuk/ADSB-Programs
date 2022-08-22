@@ -76,4 +76,23 @@ TEST(part05, quick1) {
    for (int i = 0; i < 10; ++i) 
       EXPECT_EQ(arr[i], arrS[i]) << "Arrays differ at index " << i;
 }
-   
+
+TEST(part05, shell1) {
+   int arr[]  = {5, 8, 1, 4, 9, 0, 6, 12, 2, 4};
+   int arrS[] = {0, 1, 2, 4, 4, 5, 6, 8, 9, 12};
+
+   shellSort1(arr, 10);
+  
+   for (int i = 0; i < 10; ++i) 
+      EXPECT_EQ(arr[i], arrS[i]) << "Arrays differ at index " << i;
+}
+
+TEST(part05, shell2) {
+   int arr[]  = {5, 8, 1, 4, 9, 0, 6, 12, 2, 4};
+   int arrS[] = {0, 1, 2, 4, 4, 5, 6, 8, 9, 12};
+
+   shellSort2(arr, 10);
+  
+   for (int i = 0; i < 10; ++i) 
+      EXPECT_EQ(arr[i], arrS[i]) << "Arrays differ at index " << i;
+}
