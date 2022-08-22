@@ -10,4 +10,5 @@ set(include_dest "include/")
 
 add_subdirectory(part03)
 add_subdirectory(part05)
+add_subdirectory(part06)
 add_subdirectory(test)
