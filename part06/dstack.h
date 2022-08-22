@@ -19,7 +19,7 @@ class DStack {
        this->size=size;
        arr=new T[size];
      }
-     ~DSize() {
+     ~DStack() {
        delete[]arr;
      }
      bool isEmpty() const {

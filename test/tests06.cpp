@@ -6,7 +6,7 @@
 
 TEST(part06, sstack1) {
 
-   SStack stack; 
+   SStack<int> stack; 
 
    ASSERT_TRUE(stack.isEmpty() == true);
 }
