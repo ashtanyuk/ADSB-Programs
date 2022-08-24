@@ -3,10 +3,8 @@
 #include <cassert>
  
 template<typename T>
-class SList
-{
-    struct ITEM
-    {
+class SList {
+    struct ITEM {
         T data;
         ITEM * next;
     };
@@ -26,21 +24,19 @@ private:
 };
 
 template<typename T>
-SList<T>::SList(const T& data)
-{
+SList<T>::SList(const T& data) {
     head=create(data);
     tail=head;
 }
+
 template<typename T>
-SList<T>::~SList()
-{
+SList<T>::~SList() {
     while(head)
         rmHead();
 }
 
 template<typename T>
-typename SList<T>::ITEM* SList<T>::create(const T& data)
-{
+typename SList<T>::ITEM* SList<T>::create(const T& data) {
    ITEM *item=new ITEM;
    item->data=data;
    item->next=nullptr;
@@ -48,59 +44,48 @@ typename SList<T>::ITEM* SList<T>::create(const T& data)
 }
 
 template<typename T>
-void SList<T>::addTail(const T& data)
-{
-    if(tail && head)
-    {
+void SList<T>::addTail(const T& data) {
+    if(tail && head) {
         tail->next=create(data);
         tail=tail->next;
     }
-    else
-    {
+    else {
         head=create(data);
         tail=head;
     }
 }
 
 template<typename T>
-void SList<T>::addHead(const T& data)
-{
-    if(tail && head)
-    {
+void SList<T>::addHead(const T& data) {
+    if(tail && head) {
         ITEM *temp=create(data);
         temp->next=head;
         head=temp;
     }
-    else
-    {
+    else {
         head=create(data);
         tail=head;
     }
 }
 
 template<typename T>
-T SList<T>::rmHead()
-{
-    if(head)
-    {
+T SList<T>::rmHead() {
+    if(head) {
         ITEM *temp=head->next;
         T data=head->data;
         delete head;
         head=temp;
         return data;
     }
-    else
-    {
+    else {
         return (T)0;
     }
 }
 
 template<typename T>
-void SList<T>::print() const
-{
+void SList<T>::print() const {
     ITEM *temp=head;
-    while(temp)
-    {
+    while(temp) {
         std::cout<<temp->data<<" ";
         temp=temp->next;
     }
