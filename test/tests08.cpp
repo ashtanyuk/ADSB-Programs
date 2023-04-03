@@ -37,7 +37,7 @@ TEST(part08, slist_throw_1) {
         FAIL() << "Expected std::string";
     }
     catch(std::string const & err) {
-        EXPECT_EQ(err,std::string("empty!"));
+        EXPECT_EQ(err,std::string("Empty!"));
     }
     catch(...) {
         FAIL() << "Expected std::string";
