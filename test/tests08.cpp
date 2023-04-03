@@ -14,8 +14,8 @@ TEST(part08, slist_print_1) {
 TEST(part08, slist_print_2) {
 
     SList<int> list; 
-				list.AddTail(5);
-				list.AddTail(6);
+				list.addTail(5);
+				list.addTail(6);
 				int count = list.print();
     ASSERT_TRUE(count, 2);
 }
