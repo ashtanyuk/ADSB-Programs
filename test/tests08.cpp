@@ -4,16 +4,19 @@
 #include "slist.h"
 #include "dlist.h"
 
-TEST(part08, slist1) {
+TEST(part08, slist_print_1) {
 
    SList<int> list; 
-
-   ASSERT_TRUE(true);
+   int count = list.print();
+   ASSERT_EQ(count, 0);
 }
 
-TEST(part08, slist2) {
+TEST(part08, slist_print_2) {
 
     SList<int> list; 
-    ASSERT_TRUE(true);
+				list.AddTail(5);
+				list.AddTail(6);
+				int count = list.print();
+    ASSERT_TRUE(count, 2);
 }
 
