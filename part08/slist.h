@@ -1,6 +1,10 @@
 // Copyright 2022
+// Single Linked List
+//
 
 #include <cassert>
+#include <string>
+#include <iostream>
  
 template<typename T>
 class SList {
@@ -16,7 +20,8 @@ public:
     void addTail(const T&);
     void addHead(const T&);
     T rmHead();
-    void print() const;
+    T rmTail();
+    int print() const;
 private:
     SList::ITEM* create(const T&);
     ITEM *head;
@@ -77,18 +82,44 @@ T SList<T>::rmHead() {
         head=temp;
         return data;
     }
-    else {
-        return (T)0;
-    }
+    else 
+       throw std::string("Empty!");
 }
 
 template<typename T>
-void SList<T>::print() const {
+T SList<T>::rmTail() {
+    // list has one item
+    if(head && head == tail) {
+       T data = head -> data;
+       delete head;
+       head = tail = nullptr;
+       return data;
+    } 
+    // list has 2 or more items
+    else if(head) {
+       ITEM *temp=head;
+       while(temp->next != tail)
+          temp = temp -> next;
+       T data = tail -> data;
+       delete tail;
+       temp -> next = nullptr;
+       return data;
+    }
+    else 
+       throw std::string("Empty!");
+}
+
+
+template<typename T>
+int SList<T>::print() const {
     ITEM *temp=head;
+    int count = 0;
     while(temp) {
         std::cout<<temp->data<<" ";
+        ++count;
         temp=temp->next;
     }
     std::cout<<std::endl;
+    return count;
 }
 
