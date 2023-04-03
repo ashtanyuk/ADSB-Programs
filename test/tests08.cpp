@@ -17,6 +17,6 @@ TEST(part08, slist_print_2) {
 				list.addTail(5);
 				list.addTail(6);
 				int count = list.print();
-    ASSERT_TRUE(count, 2);
+    ASSERT_EQ(count, 2);
 }
 
