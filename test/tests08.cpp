@@ -55,3 +55,14 @@ TEST(part08, slist_copy_1) {
    int count = list2.print();
    ASSERT_EQ(count, 4);
 }
+
+TEST(part08, slist_add_many) {
+   
+   SList<int> list;
+			
+			for(int i = 0; i < 100000; i++) 
+      list.addTail(i);
+
+   int count = list.print();
+   ASSERT_EQ(count, 100000);
+}

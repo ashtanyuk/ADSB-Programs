@@ -21,7 +21,8 @@ public:
     void addHead(const T&);
     T rmHead();
     T rmTail();
-    int print() const;
+    uint64_t print() const;
+    uint64_t count() const;
 private:
     SList::ITEM* create(const T&);
     ITEM *head;
@@ -129,9 +130,9 @@ T SList<T>::rmTail() {
 
 
 template<typename T>
-int SList<T>::print() const {
+uint64_t SList<T>::print() const {
     ITEM *temp=head;
-    int count = 0;
+    uint64_t count = 0;
     while(temp) {
         std::cout<<temp->data<<" ";
         ++count;
@@ -139,5 +140,16 @@ int SList<T>::print() const {
     }
     std::cout<<std::endl;
     return count;
+}
+
+template<typename T>
+uint64_t SList<T>::count() const {
+    ITEM *temp=head;
+    uint64_t cnt = 0;
+    while(temp) {
+        ++cnt;
+        temp=temp->next;
+    }
+    return cnt;
 }
 
