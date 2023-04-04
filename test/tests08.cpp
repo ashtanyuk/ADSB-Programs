@@ -43,3 +43,15 @@ TEST(part08, slist_throw_1) {
         FAIL() << "Expected std::string";
     }
 }
+
+TEST(part08, slist_copy_1) {
+   
+   SList<int> list;
+   list.addTail(5);
+   list.addTail(6);
+   list.addTail(7);
+   list.addTail(8);
+   SList<int> list2{list1};
+   int count = list2.print();
+   ASSERT_EQ(count, 4);
+}

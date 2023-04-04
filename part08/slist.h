@@ -29,6 +29,24 @@ private:
 };
 
 template<typename T>
+SList<T>::SList(const SList& list) {
+   // list is empty
+   if(list.head == nullptr)
+     head = tail = nullptr;
+   else {
+     head = create(list.head->data);
+     ITEM* templist = list.head->next;
+     ITEM* temp = head;
+     while(templist) {
+        temp -> next = create(templist->data);
+        temp = temp -> next;
+        templist = templist -> next;
+     }
+     tail = temp; 
+   }
+}
+
+template<typename T>
 SList<T>::SList(const T& data) {
     head=create(data);
     tail=head;
