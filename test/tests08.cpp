@@ -46,11 +46,11 @@ TEST(part08, slist_throw_1) {
 
 TEST(part08, slist_copy_1) {
    
-   SList<int> list;
-   list.addTail(5);
-   list.addTail(6);
-   list.addTail(7);
-   list.addTail(8);
+   SList<int> list1;
+   list1.addTail(5);
+   list1.addTail(6);
+   list1.addTail(7);
+   list1.addTail(8);
    SList<int> list2{list1};
    int count = list2.print();
    ASSERT_EQ(count, 4);
