@@ -63,6 +63,6 @@ TEST(part08, slist_add_many) {
 			for(int i = 0; i < 100000; i++) 
       list.addTail(i);
 
-   int count = list.print();
+   int count = list.count();
    ASSERT_EQ(count, 100000);
 }
