@@ -15,8 +15,8 @@ TEST(part08, slist_add_rem_1) {
     SList<int> list; 
     list.addTail(5);
     list.addTail(6);
-    list.rmTail(5);
-    list.rmTail(6);
+    list.rmTail();
+    list.rmTail();
     int count = list.count();
     ASSERT_EQ(count, 0);
 }
