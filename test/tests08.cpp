@@ -7,9 +7,20 @@
 TEST(part08, slist_empty_1) {
 
    SList<int> list; 
-    int count = list.print();
+    int count = list.count();
     ASSERT_EQ(count, 0);
 }
+TEST(part08, slist_add_rem_1) {
+
+    SList<int> list; 
+    list.addTail(5);
+    list.addTail(6);
+    list.rmTail(5);
+    list.rmTail(6);
+    int count = list.count();
+    ASSERT_EQ(count, 0);
+}
+
 
 TEST(part08, slist_addTail_1) {
 
@@ -52,7 +63,7 @@ TEST(part08, slist_copy_1) {
    list1.addTail(7);
    list1.addTail(8);
    SList<int> list2{list1};
-   int count = list2.print();
+   int count = list2.count();
    ASSERT_EQ(count, 4);
 }
 

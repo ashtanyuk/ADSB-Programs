@@ -99,6 +99,8 @@ T SList<T>::rmHead() {
         T data=head->data;
         delete head;
         head=temp;
+								if(!head)
+									  tail = head;
         return data;
     }
     else 
@@ -109,10 +111,7 @@ template<typename T>
 T SList<T>::rmTail() {
     // list has one item
     if(head && head == tail) {
-       T data = head -> data;
-       delete head;
-       head = tail = nullptr;
-       return data;
+       return rmHead();
     } 
     // list has 2 or more items
     else if(head) {
