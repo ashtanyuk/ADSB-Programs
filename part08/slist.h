@@ -120,7 +120,8 @@ T SList<T>::rmTail() {
           temp = temp -> next;
        T data = tail -> data;
        delete tail;
-       temp -> next = nullptr;
+							tail = temp;
+       tail -> next = nullptr;
        return data;
     }
     else 
