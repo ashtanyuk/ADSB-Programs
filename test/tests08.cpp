@@ -46,7 +46,7 @@ TEST(part08, slist_empty_2) {
     SList<int> list; 
     list.addTail(5);
     list.rmTail();
-    int count = list.print();
+    int count = list.count();
     ASSERT_EQ(count, 0);
 }
 
@@ -55,6 +55,22 @@ TEST(part08, slist_throw_1) {
     SList<int> list;
     try {
         list.rmHead();
+        FAIL() << "Expected std::string";
+    }
+    catch(std::string const & err) {
+        EXPECT_EQ(err,std::string("Empty!"));
+    }
+    catch(...) {
+        FAIL() << "Expected std::string";
+    }
+}
+TEST(part08, slist_throw_2) {
+	
+    SList<int> list;
+				list.addTail(5);
+    try {
+        list.rmHead();
+								list.rmTail();
         FAIL() << "Expected std::string";
     }
     catch(std::string const & err) {
