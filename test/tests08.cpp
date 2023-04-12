@@ -103,3 +103,12 @@ TEST(part08, slist_add_many) {
    int count = list.count();
    ASSERT_EQ(count, 100000);
 }
+
+TEST(part08, dlist_empty) {
+   
+   DList<int> list;
+			
+
+   bool empty = list.isEmpty();
+   ASSERT_EQ(empty, true);
+}
