@@ -121,7 +121,9 @@ T DList<T>::rmTail() {
     if(head && tail) {
         ITEM *temp=tail->prev;
         if(temp)
-          temp->next=nullptr;        
+          temp->next=nullptr;   
+        else 
+          head = nullptr;									
         T data=tail->data;
         delete tail;
         tail=temp;
