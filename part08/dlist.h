@@ -24,6 +24,7 @@ public:
     T getNext();
     void reset();
     void print() const;
+				int  count() const;
     void printReverse() const;
     bool isEmpty() const;
     void insert(const T&, const T&);
@@ -166,6 +167,17 @@ void DList<T>::print() const {
         temp=temp->next;
     }
     std::cout<<std::endl;
+}
+
+template<typename T>
+int DList<T>::count() const {
+    ITEM *temp=head;
+				int cnt = 0;
+    while(temp) {
+        ++cnt;
+        temp=temp->next;
+    }
+    return cnt;
 }
 
 template<typename T>

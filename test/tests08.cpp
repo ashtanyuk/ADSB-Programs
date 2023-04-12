@@ -112,3 +112,54 @@ TEST(part08, dlist_empty) {
    bool empty = list.isEmpty();
    ASSERT_EQ(empty, true);
 }
+
+TEST(part08, dlist_one) {
+   
+   DList<int> list(5);
+
+   int cnt = list.count();
+   ASSERT_EQ(cnt, 1);
+}
+
+TEST(part08, dlist_add_rm_1) {
+   
+   DList<int> list;
+			list.addTail(1);
+   list.rmtail(); 			
+			
+   bool empty = list.isEmpty();
+   ASSERT_EQ(empty, true);
+}
+
+TEST(part08, dlist_add_rm_2) {
+   
+   DList<int> list;
+			list.addHead(1);
+   list.rmHead(); 			
+			
+   bool empty = list.isEmpty();
+   ASSERT_EQ(empty, true);
+}
+
+TEST(part08, dlist_add_rm_3) {
+   
+   DList<int> list;
+			list.addHead(1);
+   list.rmTail(); 			
+			
+   bool empty = list.isEmpty();
+   ASSERT_EQ(empty, true);
+}
+
+TEST(part08, dlist_add_rm_4) {
+   
+   DList<int> list;
+			list.addTail(1);
+   list.rmHead(); 			
+			
+   bool empty = list.isEmpty();
+   ASSERT_EQ(empty, true);
+}
+
+
+
