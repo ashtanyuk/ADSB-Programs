@@ -125,7 +125,7 @@ TEST(part08, dlist_add_rm_1) {
    
    DList<int> list;
 			list.addTail(1);
-   list.rmtail(); 			
+   list.rmTail(); 			
 			
    bool empty = list.isEmpty();
    ASSERT_EQ(empty, true);
