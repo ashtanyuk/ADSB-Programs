@@ -206,3 +206,38 @@ TEST(part08, dlist_add_rm_8) {
    ASSERT_EQ(empty, true);
 }
 
+TEST(part08, dlist_add_many_1) {
+   
+   DList<int> list;
+			
+			for(int i = 0; i < 10000; i++)
+			   list.addTail(i);
+			
+   int cnt = list.count();
+   ASSERT_EQ(cnt, 10000);
+}
+
+TEST(part08, dlist_add_1) {
+   
+   DList<int> list(200);
+			
+   int cnt = list.count();
+   ASSERT_EQ(cnt, 1);
+}
+
+TEST(part08, dlist_throw_1) {
+	
+    DList<int> list;
+				list.addTail(5);
+    try {
+        list.rmHead();
+								list.rmTail();
+        FAIL() << "Expected std::string";
+    }
+    catch(std::string const & err) {
+        EXPECT_EQ(err,std::string("Empty!"));
+    }
+    catch(...) {
+        FAIL() << "Expected std::string";
+    }
+}
