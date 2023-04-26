@@ -17,6 +17,7 @@ private:
     int   searchNode(Node*,T);
     void  delTree(Node*);
     Node* delNode(Node*,int);
+				int   countTree(Node*);
 public:
     BST();
     ~BST();
@@ -26,7 +27,21 @@ public:
     int  search(T);
     void clear();
     void remove(int);
+				int count();
 };
+
+template<typename T>
+int BST<T>::countTree(Node<T>* root) {
+	  if(root == nullptr)
+				  return 0;
+			else 
+      return countTree(root->left) + countTree(root->right) + 1;
+}
+
+template<typename T>
+int BST<T>::count() {
+	  return countTree(root);
+}
 
 template<typename T>
 BST<T>::BST():root(nullptr) {}
