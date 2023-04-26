@@ -1,4 +1,6 @@
-// Copyright 2022
+// Copyright 2022-2023
+
+#include <vector>
 
 template<typename T>
 class BST {
@@ -17,9 +19,10 @@ private:
     int   searchNode(Node*,T);
     void  delTree(Node*);
     Node* delNode(Node*,int);
-				int   countTree(Node*);
+    int   countTree(Node*);
 public:
-    BST();
+    BST(const BST&);
+				BST(
     ~BST();
     void add(T);
     void print();
@@ -27,8 +30,29 @@ public:
     int  search(T);
     void clear();
     void remove(int);
-				int count();
+    int count();
 };
+
+BST(const BST& other) : root(nullptr) {
+    std::vector<Node*> remain;
+    Node* cur = other.root;
+    while (cur) {
+      add(cur->data);
+      if (cur->right) {
+        remain.push_back(cur->right);
+      }
+      if (cur->left) {
+        cur = cur->left;
+      }
+      else if (remain.empty()) {
+        break;
+      }
+      else {
+        cur = remain.back();
+        remain.pop_back();
+      }
+    }
+}
 
 template<typename T>
 int BST<T>::countTree(Node<T>* root) {

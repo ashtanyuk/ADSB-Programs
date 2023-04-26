@@ -9,3 +9,13 @@ TEST(part10, tree_1) {
     int count = tree.count();
     ASSERT_EQ(count, 0);
 }
+
+TEST(part10, tree_2) {
+
+    BST<int> tree; 
+    tree.add(1);
+    tree.add(2);
+    tree.add(3); 
+    int count = tree.count();
+    ASSERT_EQ(count, 3);
+}
